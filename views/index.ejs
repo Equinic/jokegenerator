@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+<title>Take It Easy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  
+</script>
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4 title">Joke it off!</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/safemode" class="nav-link">Safe mode</a></li>
+            <li class="nav-item"><a href="/postajoke" class="nav-link">Submit a Joke</a></li>
+          </ul>
+        </header>
+      </div>
+
+
+<div id="description">
+<p>Tell us a bit more about your current mood(vibe)</p>
+</div>
+<div id="data">
+<form action="/submit"method="POST">
+<label id="labels" class="form-label">Category: </label>
+<select class="form-select category" name="category">
+    <option>Misc</option>
+    <option>Programming</option>
+    <option>Dark</option>
+    <option>Pun</option>
+    <option>Spooky</option>
+</select>
+<label id="labels" class="form-label">Joke Type: </label>
+<select class="form-select category" name="type">
+    <option>single</option>
+    <option>twopart</option>
+</select>
+<label id="labels" class="form-label">Search for your name: </label>
+<input type="name" value="" class="name" placeholder="name" name="name">
+<label id="labels">Opt out the the type of jokes you dont wish to see</label><br>
+<input type="checkbox" name="optout" class="checkbox" value="nsfw">
+<label id="labels">nsfw</label>
+<input type="checkbox" name="optout" class="checkbox" value="religious">
+<label id="labels">religious</label>
+<input type="checkbox" name="optout" class="checkbox" value="political">
+<label id="labels">political</label>
+<input type="checkbox" name="optout" class="checkbox" value="sexist">
+<label id="labels">sexist</label>
+<input type="checkbox" name="optout" class="checkbox" value="explicit">
+<label id="labels">explicit</label>
+<br>
+<input type="submit" class="btn btn-dark sub" value="Generate the Joke">
+
+</form>
+</div>
+
+<div class="joke">
+    <% if (typeof locals.tsetup !== 'undefined') { %>
+        <p>Setup: "<%= tsetup %>"</p>
+        <p>Delivery:" <%= tdelivery %>"</p>
+    <% } else if (typeof locals.tjoke !== 'undefined') { %>
+        <p>"Joke: <%= tjoke %>"</p>
+    <% } else { %>
+        <p>No joke or setup available.</p>
+    <% } %>
+</div>
+
+
+</body>
+</html>

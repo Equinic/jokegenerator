@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>Joke it off!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelector('select[name="type"]').addEventListener('change', toggleInputfield);
+  });
+  function toggleInputfield(){
+    var typeSelect = document.querySelector('select[name="type"]');
+    var singleJokediv = document.getElementById("single");
+    var twoJokediv = document.getElementById("twopart");
+    singleJokediv.style.display = "block";
+    if(typeSelect.value === "single")
+    {
+      singleJokediv.style.display = "block";
+      twoJokediv.style.display = "none";
+    } else if(typeSelect.value === "twopart")
+    {
+      singleJokediv.style.display = "none";
+      twoJokediv.style.display = "block";
+    }
+
+
+  }
+</script>
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4 title">Joke it off!</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/index.ejs" class="nav-link " aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/safemode" class="nav-link ">Safe mode</a></li>
+            <li class="nav-item"><a href="/postajoke" class="nav-link active">Submit a Joke</a></li>
+          </ul>
+        </header>
+      </div>     
+<h2>Got a joke on your mind? Tell us what's the joke on your ming and we will use it to to make people too</h2>
+<div id="data">
+  <form action="/getjoke" method="post">
+  <label id="labels" class="form-label">Category: </label>
+  <select class="form-select category" name="category">
+    <option>Misc</option>
+    <option>Programming</option>
+    <option>Dark</option>
+    <option>Pun</option>
+    <option>Spooky</option>
+  </select>
+  <label id="labels">Joke Type:</label>
+    <select id="type" name="type" class="form-select category" onchange="toggleInputfield()">
+      <option value="single">single</option>
+      <option value="twopart">twopart</option>
+    </select>
+  <div id="single" style="display:none;">
+    <label id="labels">Joke:</label>
+    <input type="text" name="joke" class="form-input" placeholder="Enter your joke">
+  </div>
+
+  <div id="twopart" style="display:none;">
+    <label id="labels">Setup:</label>
+    <input type="text" name="setup" class="form-input" placeholder="Enter setup">
+    <label id="labels">Delivery:</label>
+    <input type="text" name="delivery" class="form-input" placeholder="Enter delivery">
+  </div>
+
+    <label id="labels">Select the category under which your joke come in:</label><br>
+      <input type="checkbox" name="optout" class="checkbox" value="nsfw">
+      <label id="labels">nsfw</label>
+      <input type="checkbox" name="optout" class="checkbox" value="religious">
+      <label id="labels">religious</label>
+      <input type="checkbox" name="optout" class="checkbox" value="political">
+      <label id="labels">political</label>
+      <input type="checkbox" name="optout" class="checkbox" value="sexist">
+      <label id="labels">sexist</label>
+      <input type="checkbox" name="optout" class="checkbox" value="explicit">
+      <label id="labels">explicit</label>
+      <br>
+      <input type="submit" class="btn btn-dark sub" value="Add My Joke">
+  </form>
+</div>
+</body>

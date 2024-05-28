@@ -1,0 +1,99 @@
+body{
+    
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+h1{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 5rem;
+    
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+    color: plum;
+
+
+}
+#description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+
+}
+.category{
+    display: inline-flex;    
+    width: 200px;
+}
+#labels{
+    margin-left: 10px;
+    margin-right: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+#data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    flex-wrap: nowrap;
+    background-color: plum;
+    width: 450px;
+    margin-left: 35%;
+    height: min-content;
+    border: 6px solid white;
+    border-color: palevioletreds;
+    
+    
+}
+.name{
+    border-radius: 9px;
+}
+.checkbox{
+    margin-left: 10px;
+}
+.sub{
+   margin-left: 50px;
+   margin-top: 10px;
+}
+.joke{
+    background-color: purple;
+}
+p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+}
+.nav-pills .nav-item a.nav-link {
+    color: white; /* Replace #yourColor with the color code you want */
+}
+
+/* Style for the active nav item */
+.nav-pills .nav-item a.nav-link.active {
+    color: white; /* Replace #yourActiveColor with the color code for the active item */
+    background-color: plum;
+}
+h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.safebtn{
+    margin-top: 100px;
+    margin-left: 550px;
+    text-align: center;
+    
+}
+.joke{
+    margin-left: 70px;
+}
